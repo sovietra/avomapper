@@ -1,0 +1,26 @@
+# Dependencies
+frontend/node_modules/
+node_modules/
+
+# Build output
+frontend/dist/
+
+# Environment variables
+.env
+frontend/.env
+*.env.local
+
+# Claude
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# C# build artifacts
+backend-csharp/bin/
+backend-csharp/obj/
+
+# Python
+__pycache__/
+*.pyc
