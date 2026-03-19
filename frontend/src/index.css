@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #151515;
+  --bg-tertiary: #1e1e1e;
+  --red: #6b7868;
+  --red-dark: #4a5548;
+  --red-light: #849180;
+  --cream: #f0ead6;
+  --cream-dim: #b8b09a;
+  --gold: #d4af37;
+  --border: #2a2a2a;
+  --border-red: #6b7868;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--red);
+}
+
+/* Mobile safe area */
+body {
+  padding-env: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Leaflet dark map overrides */
+.leaflet-container {
+  background: #1a1a1a !important;
+}
+
+.leaflet-tile {
+  filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(1.1) saturate(0.7);
+}
+
+/* Satellite — show real colours, no filter */
+.satellite-mode .leaflet-tile {
+  filter: none;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid var(--border-red) !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--bg-secondary) !important;
+  color: var(--cream) !important;
+  border-bottom: 1px solid var(--border) !important;
+  font-family: 'Oswald', sans-serif !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--red) !important;
+  color: white !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(13, 13, 13, 0.8) !important;
+  color: var(--cream-dim) !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--red-light) !important;
+}
